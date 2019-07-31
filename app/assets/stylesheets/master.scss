@@ -9,8 +9,23 @@
   border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
   margin-top: 10px; 
   margin-bottom: 15px; 
-  padding: 20px; 
+  padding: 20px;
+  border-radius: 10px;  
+  background-color: white; 
+  font-family: cooper; 
 }
+
+.whole-body { 
+  background: url('nomster2-background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: cooper;
+  font-kerning: 2px;  
+ }
+
+ .top-bar { 
+  background-color: white;
+  box-shadow: 2px 2px 5px; 
+  }
 
 h1, h2, h3, h4, h5, h6 { 
   padding: 0px;
