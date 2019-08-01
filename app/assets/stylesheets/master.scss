@@ -11,23 +11,26 @@
   margin-bottom: 15px; 
   padding: 20px;
   border-radius: 10px;  
-  background-color: white; 
-  
+  background-color: white;  
 }
 
-.whole-body { 
+body { 
   background: url('nomster-background.jpg') no-repeat center center fixed;
   background-size: cover;
-  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
-  font-kerning: 2px;  
- }
+  font-family: 'courier_prime_coderegular';   
+  letter-spacing: .01em;  
+}
 
- .top-bar { 
-  background-color: white;
+ .navbar { 
   box-shadow: 0px 2px 5px; 
-  }
+}
 
 h1, h2, h3, h4, h5, h6 { 
   padding: 0px;
   margin: 0px;
- }
+}
+
+ .navbar-inverse .navbar-brand { 
+    color: #3989C9;
+    font-family: 'courier_prime_coderegular';
+}
