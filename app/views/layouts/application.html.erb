@@ -12,7 +12,7 @@
 </head>
 
 <body class="whole-body">
-  <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+  <nav class="navbar fixed-top navbar-toggleable-md navbar-inverse bg-inverse">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -33,6 +33,14 @@
     </div>
 
   </nav>
-  <%= yield %>
+  <%= yield %> 
+  <div class="page col-12" align="center"> 
+    <%= will_paginate @places %> 
+  </div> 
+
+  <div class="hacked-by col-12" align="center"> 
+    Hacked by <a href="https://devounedwards.netlify.com/"> Devoun Edwards </a>
+  </div> 
+   
 </body>
 </html>

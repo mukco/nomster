@@ -19,6 +19,7 @@ body {
   background-size: cover;
   font-family: 'courier_prime_coderegular';   
   letter-spacing: .01em;  
+  padding-top: 50px; 
 }
 
  .navbar { 
@@ -33,4 +34,40 @@ h1, h2, h3, h4, h5, h6 {
  .navbar-inverse .navbar-brand { 
     color: #3989C9;
     font-family: 'courier_prime_coderegular';
+    font-size: 18px; 
 }
+
+.page { 
+  text-align: center; 
+ }
+
+.pagination { 
+  background: white;
+  border: 1px solid #ccc;
+  padding: 3px; 
+  box-shadow: 1px 1px 2px 0 #d0d0d0;
+  font-family: 'courier_prime_coderegular';
+  font-size: 10px; 
+  display: inline-block;
+  font-style: normal;
+}
+
+.pagination .current { 
+  font-style: normal;
+  border: 1px solid;
+  border-radius: 1em;
+  width: 1em;
+  height: 1em; 
+  border-color: #3989C9; 
+}
+
+.hacked-by { 
+  background: #292b2c; 
+  color: white;
+  font-size: 8px;
+  margin-top: 15px; 
+ }
+
+ .hacked-by .a { 
+  color: #3989C9;
+  }
