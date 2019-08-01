@@ -16,9 +16,12 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <%= link_to root_path, class: "logo" do %> 
     <a class="navbar-brand" href="#">
     <img src="/assets/logo.png" alt="logo" width="40" height="30" class="d-inline-block align-top">  NOMSTER
     </a> 
+    <% end %> 
+
     
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
@@ -34,9 +37,6 @@
 
   </nav>
   <%= yield %> 
-  <div class="page col-12" align="center"> 
-    <%= will_paginate @places %> 
-  </div> 
 
   <div class="hacked-by col-12" align="center"> 
     Hacked by <a href="https://devounedwards.netlify.com/"> Devoun Edwards </a>
