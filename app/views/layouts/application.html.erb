@@ -16,21 +16,18 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <%= link_to root_path, class: "logo" do %> 
     <a class="navbar-brand" href="#">
-    <img src="/assets/logo.png" alt="logo" width="40" height="30" class="d-inline-block align-top">  NOMSTER
+      <%= link_to root_path, class: 'navbar-brand' do %>
+      <img src="/assets/logo.png" alt="logo" width="35" height="25" class="d-inline-block align-top"><span class="nom-nom"> NOMSTER</span> 
+      <% end %> 
     </a> 
-    <% end %> 
-
-    
-
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <div class="collapse navbar-collapse align-items-center" id="navbarTogglerDemo02">
       <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+        <li class="nav-item d-inline-block ">
+          <%= link_to new_place_path, class: 'nav-link' do %>
+          <span class="fa fa-plus-circle"></span>
+          <span class="new-nom"> New Nom </span>
+          <% end %>
         </li>
       </ul>
     </div>
@@ -38,9 +35,9 @@
   </nav>
   <%= yield %> 
 
-  <div class="hacked-by col-12" align="center"> 
+  <div class="fixed-bottom hacked-by col-12" align="center"> 
     Hacked by <a href="https://devounedwards.netlify.com/"> Devoun Edwards </a>
   </div> 
-   
+
 </body>
 </html>
