@@ -1,10 +1,10 @@
 <div class="booyah-box col-10 offset-1"> 
   <h1> Enter Your Noms Here </h1>
   <%= simple_form_for @place do |f| %> 
-      <%= f.input :name, label: "What is the name of the resturant?" %> 
-      <%= f.input :address, label: "What is the address?" %>  
-      <%= f.input :description, label: "What do the do they do best?" %> 
-      <br /> 
-      <%= f.submit 'Create', class: 'btn btn-primary' %> 
-    <% end %> 
+  <%= f.input :name, label: "What is the name of the resturant?" %> 
+  <%= f.input :address, label: "What is the address?" %>  
+  <%= f.input :description, label: "What do the do they do best?" %> 
+  <br /> 
+  <%= f.submit 'Create', class: 'btn btn-primary' %> 
+  <% end %> 
 </div> 
