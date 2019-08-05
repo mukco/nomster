@@ -36,6 +36,11 @@ before_action :authenticate_user!, only: [:new, :create]
     redirect_to place_path(params[:id])
   end
 
+  def destroy
+    @place = Place.find(params[:id]).destroy
+    redirect_to root_path
+  end 
+
   private 
 
   def place_params
