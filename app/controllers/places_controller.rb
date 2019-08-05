@@ -1,5 +1,5 @@
 class PlacesController < ApplicationController
-before_action :authenticate_user!, only [:new, :create]
+before_action :authenticate_user!, only: [:new, :create]
 
   def index 
     @places = Place.all.order("created_at DESC").page(params[:page]).per_page(5)
