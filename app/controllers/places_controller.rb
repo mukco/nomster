@@ -10,8 +10,12 @@ before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destro
   end
 
   def create 
-    current_user.places.create(place_params) 
-    redirect_to root_path
+    @place = current_user.places.create(place_params)
+    if @place.valid? 
+       redirect_to root_path
+    else 
+      render :new, status: :unprocessable_entity
+    end 
   end
 
   def new
@@ -39,7 +43,11 @@ before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destro
         return render plain: 'Not Allowed', status: :forbidden 
     end
     @place.update_attributes(place_params)
-    redirect_to place_path(params[:id])
+    if @place.valid? 
+      redirect_to root_path
+    else 
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
