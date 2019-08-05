@@ -17,6 +17,7 @@
   font-size: 18px;
 }
 
+
 body { 
   background: url('nomster-background.jpg') no-repeat center center fixed;
   background-size: cover;
@@ -75,10 +76,10 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 12px;
 }
 
-.hacked-by .a { 
-  color: #3989C9;
-  margin-top: 30px; 
-}
+
+.header-booyah a { 
+  color: #292b2c;
+ }
 
 .header-booyah { 
   background: #3989C9;
@@ -90,10 +91,10 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   font-size: 28px;
 }
-/*
+
 .information { 
   margin-top: 20px;
-}*/
+}
 
 .navbar-brand { 
   padding: 0;
