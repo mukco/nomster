@@ -32,8 +32,8 @@ before_action :authenticate_user!, only: [:new, :create]
 
   def update
     @place = Place.find(params[:id])
-    Place.update_attributes(place_params)
-    redirect_to place_path(place)
+    @place.update_attributes(place_params)
+    redirect_to place_path(params[:id])
   end
 
   private 
