@@ -21,6 +21,10 @@ before_action :authenticate_user!, only: [:new, :create]
   def new_user 
     @user = User.new 
   end 
+
+  def show
+    @place = Place.find(params[:id]) 
+  end
   
   private 
 
