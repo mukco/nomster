@@ -1,10 +1,36 @@
 <div class="show booyah-box col-10 offset-1">
   <h1><%= @place.name %></h1>
   <hr /> 
-  <i><%= @place.address %></i>
-  <br/><br/>
-  <p><%= @place.description %></p>
-  <div class="float-right">
+  <i>Address:<%= @place.address %></i>
+  <br/>
+  <p>Description:<%= @place.description %></p>
+  <hr /> 
+<% if @place.latitude.present? && @place.longitude.present? %>
+  <script>
+    function initMap() {
+      var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
+
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 16,
+        center: myLatLng
+      });
+
+      var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: '<%= @place.name %>'
+      });
+    }
+  </script>
+
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALxfSHIn7cz8MNeuUEQkPb9-9tiA0rPl4&callback=initMap">
+  </script>
+
+  <div id="map"></div>
+<% end %>
+<hr />
+  <div class="col-10 offset-1">
     <% if current_user == @place.user %>  
       <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %> 
       <%= link_to 'Delete', place_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete?'}, class: 'btn btn-primary' %>
