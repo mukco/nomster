@@ -3,8 +3,8 @@
   <h1 class="header-booyah col-10 offset-1"><%= link_to place.name, place_path(place) %></h1>
   <div class="information">
     <hr /> 
-    <i><%= place.address %></i><br /> 
-    <p><%= place.description %></p><br /> 
+    <i><%= place.address %></i><br /><br />  
+    <p><%= place.description %></p> 
     <% if place.user.present? %> 
       <hr /> 
       <small>posted by:<%= place.user.email %></small> 
