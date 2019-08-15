@@ -1,9 +1,13 @@
 <div class="show booyah-box col-10 offset-1">
   <h1><%= @place.name %></h1>
   <hr /> 
-  <i>Address:<%= @place.address %></i>
-  <br/><br /> 
-  <p>Description:<%= @place.description %></p>
+  <i class="header-information col-xl-6 col-4 float-left">Address</i>
+  <i><%= @place.address %></i>
+  <br /> 
+  <br /> 
+  <br /> 
+  <i class="header-information col-xl-6 col-4 float-right">description</i>
+  <p><%= @place.description %></p>
   <hr /> 
   <% if @place.latitude.present? && @place.longitude.present? %>
   <script>
@@ -32,22 +36,23 @@
 <hr />
 <div class="col-10 offset-1">
   <% if current_user == @place.user %>  
+  <small>Modify your submission:</small> 
   <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %> 
   <%= link_to 'Delete', place_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete?'}, class: 'btn btn-primary' %>
   <% end %> 
 </div> 
 <div class="booyah-box"> 
-  <h1>Comments</h1>
+  <h1 class="header-information col-4 offset-1">Comments</h1>
   <div class="row"> 
     <% @place.comments.each do |comment| %>
-    <div class="col-12 col-sm-6">
+    <div class="posted-by col-12 col-sm-6">
       <blockquote> 
         <% if comment.humanized_rating.present? %>
         <b><%= comment.humanized_rating %></b> -
         <% end %> 
         <%= comment.message %><br /> 
         <hr id="comment_line" /> 
-        <small>Comment Posted By: <%= comment.user.email %></small>
+        <small class="posted-by-show">By: <%= comment.user.email %></small>
       </blockquote>
     </div>
     <% end %>

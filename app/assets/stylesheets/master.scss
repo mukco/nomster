@@ -130,9 +130,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .clear { 
   clear: both;
- }
+}
 
- blockquote {
+blockquote {
   background: white; opacity:0.7; ;
   margin: 1.5em 10px;
   padding: 1em 10px;
@@ -157,4 +157,34 @@ blockquote p {
 .booyah-box-2 {
   margin-top: 25px;
   margin-bottom: 50px;  
+}
+
+.posted-by { 
+  margin-top: 25px; 
+  margin-bottom: -10px;
+  font-size: 18px; 
+  text-align: left;
+}
+
+.posted-by-show { 
+  font-size: 10px;
+  text-align: left;
+ }
+
+
+.header-information { 
+  background: #3989C9;
+  border-radius: 10px; 
+  margin-top: -30px; 
+  box-shadow: 0px 2px 5px;
+  /* letter-spacing: 2px;*/
+  padding: 1px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.known-for { 
+  font-size: 14px; 
+  font-style: bold;
+
  }

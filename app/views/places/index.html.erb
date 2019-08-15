@@ -1,16 +1,36 @@
 <% @places.each do |place| %> 
 <div class="booyah-box col-10 offset-1"> 
   <h1 class="header-booyah col-10 offset-1"><%= link_to place.name, place_path(place) %></h1>
+  <small>posted by:<%= place.user.email %></small>
   <div class="information">
     <hr /> 
     <br /> 
-    <i><%= place.address %></i><br /><br />  
+    <h1 class="header-information  col-xl-6 col-4 float-left">address</h1>
+    <i><%= place.address %></i>
+    <hr />  
+    <h1 class="known-for">Known for:</h1> 
     <p><%= place.description %></p> 
     <% if place.user.present? %> 
-      <hr /> 
-      <small>posted by:<%= place.user.email %></small> 
-    <% end %>
-  </div>  
+    <hr /> 
+    <% @places.each do |place| %>
+    <% if place.comments.present? %> 
+    <div class="col-10 offset-1">
+      <% if place.user.present? %>
+      <% end %>
+      <br /> 
+      <h1 class="header-information col-4 float-right">comments</h1>
+      <blockquote> 
+        <% if place.comments.last.humanized_rating.present? %>
+        <b><%= place.comments.last.humanized_rating %></b> -
+        <% end %>
+        <%= place.comments.last.message %>
+      </blockquote>
+      <% end %> 
+    </div>
+  </div>
+  <% end %> 
+  <% end %>
+</div>  
 </div> 
 
 <%end%> 
