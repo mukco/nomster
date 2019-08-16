@@ -7,60 +7,65 @@
     <hr />
     <% end %>
   </small> 
-    <h1><%= @place.name %></h1>
-    <hr /> 
-    <i class="header-information col-xl-4 col-4 float-left">Address</i>
-    <i><%= @place.address %></i>
-    <hr /> 
-    <i class="header-information col-xl-4 col-4 float-right">known for</i>
-    <p><%= @place.description %></p>
-    <hr /> 
-    <% if @place.latitude.present? && @place.longitude.present? %>
-    <script>
-      function initMap() {
-        var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
+  <h1 class="title-show-page"><%= @place.name %></h1>
+  <hr /> 
+  <h1 class="header-information col-xl-4 col-5 float-left">Address</h1>
+  <i><%= @place.address %></i>
+  <hr /> 
+  <h1 class="header-information col-xl-4 col-5 float-right">known for:</h1>
+  <p><%= @place.description %></p>
+  <hr /> 
+  <% if @place.latitude.present? && @place.longitude.present? %>
+  <script>
+    function initMap() {
+      var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
 
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 16,
-          center: myLatLng
-        });
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 16,
+        center: myLatLng
+      });
 
-        var marker = new google.maps.Marker({
-          position: myLatLng,
-          map: map,
-          title: '<%= @place.name %>'
-        });
-      }
-    </script>
-
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALxfSHIn7cz8MNeuUEQkPb9-9tiA0rPl4&callback=initMap">
+      var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: '<%= @place.name %>'
+      });
+    }
   </script>
 
-  <div id="map"></div>
-  <% end %>
-  <hr />
-  <div class="col-10 offset-1">
-  </div> 
-  <div class="booyah-box"> 
-    <h1 class="header-information col-4 offset-1">Comments</h1>
-    <div class="row"> 
-      <% @place.comments.each do |comment| %>
-      <div class="posted-by col-12 col-sm-6">
-        <blockquote> 
-          <% if comment.humanized_rating.present? %>
-          <b><%= comment.humanized_rating %></b> -
-          <% end %> 
-          <%= comment.message %><br /> 
-          <hr id="comment_line" /> 
-          <small class="posted-by-show">By: <%= comment.user.email %></small>
-        </blockquote>
-      </div>
-      <% end %>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALxfSHIn7cz8MNeuUEQkPb9-9tiA0rPl4&callback=initMap">
+</script>
+
+<div id="map"></div>
+<% end %>
+<hr />
+<div class="booyah-box-2"> 
+<img><%= @place.photos.each do |photo| %>
+<% end %> 
+</div>
+<div class="col-10 offset-1">
+</div> 
+<div class="booyah-box"> 
+  <h1 class="header-information col-4 offset-1">Comments</h1>
+  <div class="buttons-for-modal"> 
+    <% @place.comments.each do |comment| %>
+    <div class="posted-by col-12 col-sm-6">
+      <blockquote> 
+        <% if comment.humanized_rating.present? %>
+        <b><%= comment.humanized_rating %></b> -
+        <% end %> 
+        <%= comment.message %><br /> 
+        <hr id="comment_line" /> 
+        <small class="posted-by-show">By: <%= comment.user.email %></small>
+      </blockquote>
     </div>
-  </div>    
-  <div class="float-right booyah-box-2 clear">
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    <% end %>
+  </div>
+</div>    
+<div class=""> 
+  <div class="booyah-box-2">
+    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
       Add A Comment 
     </button>
     <div class="clear"></div>
@@ -79,13 +84,38 @@
             <%= f.input :rating, as: :select, collection: Comment::RATINGS %>
           </div>
           <div class="modal-footer">
-            <%= f.submit "Add a Comment", class: 'btn btn-primary' %>
+            <%= f.submit "Add A Comment", class: 'btn btn-primary' %>
             <button type="button" class="btn btn-primary">Close</button>
           </div>
           <% end %>
         </div>
       </div>
     </div>
-
-
-  </div>
+    <div class="clear"></div> 
+    <button type="button" class="btn btn-primary btn-sm add-picture" data-toggle="modal" data-target="#myModal2">Add A Picture 
+    </button>
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">Add A Picture</h4>
+          </div>
+          <%= simple_form_for @photos, url: place_photos_path(@place) do |f| %>
+          <div class="modal-body">
+            <%= f.input :caption %>
+          </div>
+          <div class="modal-footer">
+            <%= f.submit "Add A Picture", class: 'btn btn-primary' %>
+            <button type="button" class="btn btn-primary">Close</button>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>  
+  <hr /> 
+</div>  
+</div>
