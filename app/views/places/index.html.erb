@@ -15,7 +15,6 @@
     <hr /> 
     <% @places.each do |place| %>
     <% if place.comments.present? %> 
-    <div class="col-12">
       <% if place.user.present? %>
       <% end %>
       <br /> 
@@ -27,7 +26,6 @@
         <%= place.comments.last.message %>
       </blockquote>
       <% end %> 
-    </div>
   </div>
   <% end %> 
   <% end %>
