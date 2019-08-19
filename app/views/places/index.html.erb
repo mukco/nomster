@@ -13,22 +13,22 @@
     <p><%= place.description %></p> 
     <% if place.user.present? %> 
     <hr /> 
-    <% @places.each do |place| %>
     <% if place.comments.present? %> 
-      <% if place.user.present? %>
-      <% end %>
       <br /> 
       <h1 class="header-information col-5 float-right">comments</h1>
-      <blockquote> 
-        <% if place.comments.last.humanized_rating.present? %>
-        <b><%= place.comments.last.humanized_rating %></b> -
-        <% end %>
-        <%= place.comments.last.message %>
-      </blockquote>
-      <% end %> 
+      <% place.comments.each do |comment| %> 
+        <blockquote> 
+          <div>  
+            <% if comment.humanized_rating.present? %>
+              <b><%= comment.humanized_rating %></b> -
+            <% end %>
+            <%= comment.message %>
+          </div> 
+        </blockquote>
+      <% end %>
+    <% end %> 
   </div>
   <% end %> 
-  <% end %>
 </div>  
 </div> 
 

@@ -9,10 +9,10 @@
   </small> 
   <h1 class="title-show-page"><%= @place.name %></h1>
   <hr /> 
-  <h1 class="header-information col-xl-4 col-5 float-left">Address</h1>
+  <h1 class="header-information col-xl-4 col-4 float-left">Address</h1>
   <i><%= @place.address %></i>
   <hr /> 
-  <h1 class="header-information col-xl-4 col-5 float-right">known for:</h1>
+  <h1 class="header-information col-xl-4 col-4 float-right">known for:</h1>
   <p><%= @place.description %></p>
   <hr /> 
   <% if @place.latitude.present? && @place.longitude.present? %>
@@ -40,9 +40,14 @@
 <div id="map"></div>
 <% end %>
 <hr />
-<div class="booyah-box-2"> 
-<img><%= @place.photos.each do |photo| %>
-<% end %> 
+<div class="show-pictures"> 
+    <% @place.photos.each do |photo| %> 
+      <%= image_tag(photo.picture.url) %>
+        <div class="photo-caption">
+          <%= photo.caption %>  
+        </div>   
+  <% end %>
+  <hr /> 
 </div>
 <div class="col-10 offset-1">
 </div> 
@@ -103,8 +108,9 @@
             </button>
             <h4 class="modal-title" id="myModalLabel">Add A Picture</h4>
           </div>
-          <%= simple_form_for @photos, url: place_photos_path(@place) do |f| %>
+          <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
           <div class="modal-body">
+            <%= f.input :picture %> 
             <%= f.input :caption %>
           </div>
           <div class="modal-footer">
