@@ -4,33 +4,44 @@
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
-  <div class="carousel-inner" role="listbox">
+  <div class="carousel-inner col-11 ml-auto mr-auto" role="listbox">
     <div class="carousel-item active">
-       <%= image_tag 'slider1.jpg', class: 'd-block img-fluid' %>
-       <div class="carousel-caption d-none d-md-clock"> 
-          <h3> The Best Burgers in Town! </h3> 
+      <div class="carousel-caption"> 
+        <h3> The Best Burgers in Town! </h3> 
       </div> 
+      <%= image_tag 'slider1.jpg', class: 'd-block img-fluid' %>   
     </div>
     <div class="carousel-item">
+      <div class="carousel-caption"> 
+        <h3> Try the Pancakes! </h3> 
+      </div> 
       <%= image_tag 'slider2.jpg', class: 'd-block img-fluid' %>
     </div>
     <div class="carousel-item">
-      <%= image_tag 'slider3.jpg', class: 'd-block img-fluid' %>
-    </div>
+     <div class="carousel-caption"> 
+      <h3> This pizza is delicious! </h3> 
+    </div> 
+    <%= image_tag 'slider3.jpg', class: 'd-block img-fluid' %>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+</div>
+<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <span class="sr-only">Next</span>
+</a>
 </div>
 <% @places.each do |place| %> 
 <div class="booyah-box col-10 offset-1"> 
   <h1 class="header-booyah col-xl-4 col-10 offset-1"><%= link_to place.name, place_path(place) %></h1>
   <small class="posted-by-index">posted by:<%= place.user.email %></small>
+  <div class="show-pictures-index offset-1 col-10"> 
+    <% place.photos.each do |photo| %> 
+    <%= image_tag(photo.picture.url) %>
+    <% end %> 
+  </div>
   <div class="information">
     <hr /> 
     <br /> 
@@ -43,18 +54,18 @@
     <% if place.user.present? %> 
     <hr /> 
     <% if place.comments.present? %> 
-      <br /> 
-      <h1 class="header-information col-5 float-right">comments</h1>
-      <% place.comments.each do |comment| %> 
-        <blockquote> 
-          <div>  
-            <% if comment.humanized_rating.present? %>
-              <b><%= comment.humanized_rating %></b> -
-            <% end %>
-            <%= comment.message %>
-          </div> 
-        </blockquote>
-      <% end %>
+    <br /> 
+    <h1 class="header-information col-5 float-right">comments</h1>
+    <% place.comments.each do |comment| %> 
+    <blockquote> 
+      <div>  
+        <% if comment.humanized_rating.present? %>
+        <b><%= comment.humanized_rating %></b> -
+        <% end %>
+        <%= comment.message %>
+      </div> 
+    </blockquote>
+    <% end %>
     <% end %> 
   </div>
   <% end %> 

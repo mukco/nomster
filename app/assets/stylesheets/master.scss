@@ -204,23 +204,47 @@ d
   box-shadow: 2px 2px 3px 0 #d0d0d0;
 }
 
+.show-pictures-index img { 
+  border-radius: 25px;
+  height: 145px;
+  width: 217.5px;
+  box-shadow: 2px 2px 3px 0 #d0d0d0;
+  align-content: center; 
+}
+
 .photo-caption { 
   font-size: 10px;
  }
 
  .carousel { 
-  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
-  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
-  box-shadow: 2px 2px 3px 0 #d0d0d0;
-  background: #fff;
-  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
-  margin-bottom: 15px; 
+/*  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;*/
+ /* box-shadow: 2px 2px 3px 0 #d0d0d0;*/
+  /*background: #fff;*/
+  border-color: #292b2c;
   padding: 20px;
   border-radius: 10px;  
-  background-color: white;  
+/*  background-color: white;  */
   text-align: center; 
-  font-size: 18px;
 } 
+
 .carousel img {
-  border-radius: 10px;
+  border-radius: 25PX;
+  max-height: 550px;
+  width: 100%; 
+  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  box-shadow: 4px 4px 2px 0 #d0d0d0;
+  border: 8px solid #292b2c;
  }
+
+ .carousel-caption {
+  font-family:  'courier_prime_coderegular';
+  font-size: 60px;
+  font-weight: 100;
+  text-shadow: rgba(0, 0, 0, 0.95) 2px 2px;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  position: absolute;
+  left: 0;
+}
