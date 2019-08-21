@@ -207,3 +207,20 @@ d
 .photo-caption { 
   font-size: 10px;
  }
+
+ .carousel { 
+  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  box-shadow: 2px 2px 3px 0 #d0d0d0;
+  background: #fff;
+  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  margin-bottom: 15px; 
+  padding: 20px;
+  border-radius: 10px;  
+  background-color: white;  
+  text-align: center; 
+  font-size: 18px;
+} 
+.carousel img {
+  border-radius: 10px;
+ }
