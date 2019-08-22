@@ -229,6 +229,7 @@ d
 }
 
 .carousel img {
+  -webkit-appearance: none;
   border-radius: 25PX;
   max-height: 550px;
   object-fit: cover; 
