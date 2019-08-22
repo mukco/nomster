@@ -39,7 +39,7 @@
   <small class="posted-by-index">posted by:<%= place.user.email %></small>
   <div class="show-pictures-index offset-1 col-10"> 
     <% if place.photos.present? %> 
-      <%= image_tag(place.photos.last.picture.url) %>
+    <%= image_tag(place.photos.last.picture.url) %>
     <% end %> 
   </div>
   <div class="information">

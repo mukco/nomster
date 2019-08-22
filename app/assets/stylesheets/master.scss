@@ -214,21 +214,21 @@ d
 
 .photo-caption { 
   font-size: 10px;
- }
+}
 
- .carousel { 
+.carousel { 
   padding: 20px;
   border-radius: 10px;  
   text-align: center; 
 } 
 
 @media (min-width: 1200px) {  
-.carousel{ 
-  object-position: center calc(100% + 100px); 
+  .carousel { 
+    object-position: center calc(100% + 100px); 
   }  
- }
+}
 
-.carousel img {
+.carousel img{
   border-radius: 25PX;
   max-height: 550px;
   object-fit: cover; 
@@ -237,9 +237,9 @@ d
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
   box-shadow: 4px 4px 2px 0 #d0d0d0;
   border: 8px solid #292b2c;
- }
+}
 
- .carousel-caption {
+.carousel-caption {
   font-family:  'courier_prime_coderegular';
   font-size: 60px;
   font-weight: 100;
@@ -253,12 +253,12 @@ d
 .profile { 
   max-height: 200px;
   max-width: 200px; 
- }
+}
 
- #profile-information { 
+#profile-information { 
   font-size: 16px;
 }
 
 .booyah-box small { 
   font-size: 12px;
- }
+}
