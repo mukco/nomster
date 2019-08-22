@@ -222,16 +222,23 @@ d
   text-align: center; 
 } 
 
-/*@media (min-width: 1200px) {  
-  .carousel { 
-    object-position: center calc(100% + 100px); 
+@media (min-width: 1200px) {  
+  .carousel .burgers { 
+    object-position: center calc(100% + 200px); 
   }  
-}*/
+}
+
+
+@media (min-width: 1200px) {  
+  .carousel img { 
+   max-height: 350px; 
+  }  
+}
 
 .carousel img {
   -webkit-appearance: none;
   border-radius: 25PX;
-  max-height: 350px;
+  max-height: 450px;
   object-fit: cover; 
   width: 100%; 
   -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
