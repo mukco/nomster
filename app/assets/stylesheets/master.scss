@@ -217,19 +217,13 @@ d
  }
 
  .carousel { 
-/*  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
-  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;*/
- /* box-shadow: 2px 2px 3px 0 #d0d0d0;*/
-  /*background: #fff;*/
-  border-color: #292b2c;
   padding: 20px;
   border-radius: 10px;  
-/*  background-color: white;  */
   text-align: center; 
 } 
 
-@media (min-width: 700px) {  
-.carousel .burgers { 
+@media (min-width: 1200px) {  
+.carousel{ 
   object-position: center calc(100% + 100px); 
   }  
  }
@@ -238,7 +232,6 @@ d
   border-radius: 25PX;
   max-height: 550px;
   object-fit: cover; 
-  height: auto;
   width: 100%; 
   -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
