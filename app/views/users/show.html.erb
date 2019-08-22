@@ -1,7 +1,7 @@
 <div class="booyah-box">
   <div class="row">
-    <div class="col-4">
-      <%= image_tag 'man.png' %>
+    <div class="col-4" >
+      <%= image_tag 'man.png', class: 'profile' %>
     </div>
 
     <div class="col-8">
@@ -12,14 +12,24 @@
     </div>
   </div>
   <div class="clear"></div>
+
+  <div class="comments">
+    <br /> 
+    <h1 class="text-center">My Comments</h1>  
+    <hr /> 
+    <br /> 
+    <div class="row">
+      <% @user.comments.each do |comment| %> 
+      <div class="col-12 col-sm-6">
+        <blockquote>
+          <h2 class="text-center"><%= link_to comment.place.name, place_path(comment.place) %></h2>
+          <% if comment.humanized_rating.present? %>
+          <b><%= comment.humanized_rating %></b> -
+          <% end %>
+          <%= comment.message %>
+          <small><%= comment.user.email %></small>
+        </blockquote>
+      </div>
+    <% end %> 
+  </div>   
 </div>
-
-
-<div class="proifile-page"> 
-    <% @places.each do |place| %> 
-      <%= place.name %>  
-    <% end %>
-    <% @user.comments.each do |comment| %> 
-      <%= comment.message %> 
-    <% end %>  
-</div> 

@@ -9,19 +9,19 @@
       <div class="carousel-caption"> 
         <h3> The Best Burgers in Town! </h3> 
       </div> 
-      <%= image_tag 'slider1.jpg', class: 'd-block img-fluid' %>   
+      <%= image_tag 'slider1.jpg', class: 'd-block img-fluid w-100 burgers' %>   
     </div>
     <div class="carousel-item">
       <div class="carousel-caption"> 
         <h3> Try the Pancakes! </h3> 
       </div> 
-      <%= image_tag 'slider2.jpg', class: 'd-block img-fluid' %>
+      <%= image_tag 'slider2.jpg', class: 'd-block img-fluid w-100' %>
     </div>
     <div class="carousel-item">
      <div class="carousel-caption"> 
       <h3> This pizza is delicious! </h3> 
     </div> 
-    <%= image_tag 'slider3.jpg', class: 'd-block img-fluid' %>
+    <%= image_tag 'slider3.jpg', class: 'd-block img-fluid w-100' %>
   </div>
 </div>
 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -38,8 +38,8 @@
   <h1 class="header-booyah col-xl-4 col-10 offset-1"><%= link_to place.name, place_path(place) %></h1>
   <small class="posted-by-index">posted by:<%= place.user.email %></small>
   <div class="show-pictures-index offset-1 col-10"> 
-    <% place.photos.each do |photo| %> 
-    <%= image_tag(photo.picture.url) %>
+    <% if place.photos.present? %> 
+      <%= image_tag(place.photos.last.picture.url) %>
     <% end %> 
   </div>
   <div class="information">

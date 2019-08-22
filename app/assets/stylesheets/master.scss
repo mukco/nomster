@@ -228,9 +228,17 @@ d
   text-align: center; 
 } 
 
+@media (min-width: 700px) {  
+.carousel .burgers { 
+  object-position: center calc(100% + 100px); 
+  }  
+ }
+
 .carousel img {
   border-radius: 25PX;
   max-height: 550px;
+  object-fit: cover; 
+  height: auto;
   width: 100%; 
   -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
@@ -248,3 +256,8 @@ d
   position: absolute;
   left: 0;
 }
+
+.profile { 
+  max-height: 200px;
+  max-width: 200px; 
+ }
