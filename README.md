@@ -1,24 +1,20 @@
-# README
+Nomster as a Yelp clone. Users can post pictures, comments and reviews on resturants. It uses Google Maps API for the location of the resutrant. The goal of this project was to work with Google's Map API and Amazon's Web Service S3 buckets.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Link to Nomster](https://nomster-devoun-edwards.herokuapp.com/)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Dependencies: 
+  * Carrierwave -- For client side image uploading 
+  * Amazon Web Services S3 Buckets -- Used for image storage 
+  * Simple Form -- For submission forms 
+  * Geocoder -- decodes geolocations received from Google's Map API 
+  * jQuery -- front end 
+  * Will_Paginate -- used for pagination 
+  
+  # Installation: 
+  After cloning the repo run bundle install in your shell. 
+  
+  `bundle install`
+  
+  # Nomster Screenshot 
+  
+  ![nomster screenshot](https://github.com/THREExPENNYco/nomster/blob/master/nomsterscreenshot.PNG)
